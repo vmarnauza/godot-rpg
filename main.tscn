@@ -1,7 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnj826ybu2ish"]
 
-[ext_resource type="PackedScene" uid="uid://buka26gp1e15p" path="res://scenes/locations/town.tscn" id="1_8kf7p"]
+[ext_resource type="PackedScene" uid="uid://ifuavcj5enm3" path="res://scenes/location_manager.tscn" id="1_kh85f"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Town" parent="." instance=ExtResource("1_8kf7p")]
+[node name="LocationManager" parent="." instance=ExtResource("1_kh85f")]
+position = Vector2(2.08165e-12, 2.08165e-12)

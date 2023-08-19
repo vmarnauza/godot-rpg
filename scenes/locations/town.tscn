@@ -29,4 +29,4 @@ position = Vector2(280, 104)
 
 [node name="LocationChange" parent="." instance=ExtResource("3_uurw5")]
 position = Vector2(296, 104)
-goto_scene_path = "res://scenes/locations/dungeon.tscn"
+target_location = 2

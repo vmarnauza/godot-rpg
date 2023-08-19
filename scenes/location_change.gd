@@ -1,20 +1,9 @@
 extends Area2D
 
-@export_file("*.tscn") var goto_scene_path
-var goto_scene: PackedScene
-
-
-func _ready():
-	goto_scene = load(goto_scene_path)
+@export var target_location: LocationManager.Location
+@export var slide_direction: LocationManager.SlideDirection = LocationManager.SlideDirection.NONE
 
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		var current = get_tree().get_nodes_in_group("location")
-
-		for location in current:
-			location.call_deferred("free")
-
-		var location = goto_scene.instantiate()
-
-		get_tree().get_root().call_deferred("add_child", location)
+		get_node("/root/Main/LocationManager").change(target_location, slide_direction)

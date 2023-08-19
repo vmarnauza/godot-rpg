@@ -14,4 +14,3 @@ position = Vector2(168, 24)
 
 [node name="LocationChange" parent="." instance=ExtResource("3_x8do4")]
 position = Vector2(168, 8)
-goto_scene_path = "res://scenes/locations/town.tscn"
