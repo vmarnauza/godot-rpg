@@ -1,23 +1,21 @@
-extends Area2D
+extends CharacterBody2D
 
 const SPEED = 50.0
 
 @onready var sprite = $AnimatedSprite2D
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = Vector2.ZERO
 
 	direction.x = Input.get_axis("move_left", "move_right")
 	direction.y = Input.get_axis("move_up", "move_down")
 
-	move(direction, delta)
+	move(direction)
 	set_animation(direction)
 
 
-func move(direction: Vector2, delta: float):
-	var velocity = Vector2.ZERO
-
+func move(direction: Vector2):
 	if direction.x:
 		velocity.x = direction.x * SPEED
 	else:
@@ -28,7 +26,7 @@ func move(direction: Vector2, delta: float):
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
-	position += velocity * delta
+	move_and_slide()
 
 
 func set_animation(direction: Vector2):

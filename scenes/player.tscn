@@ -8,9 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bc8mom1js6sv5" path="res://assets/sprites/HEROS8bit_Adventurer Walk R.png" id="5_jvvfe"]
 [ext_resource type="Texture2D" uid="uid://chj5pd8fvfy43" path="res://assets/sprites/HEROS8bit_Adventurer Walk U.png" id="6_gno52"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ecmt8"]
-radius = 7.0
-height = 18.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_terrg"]
+size = Vector2(6, 3)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjmsc"]
 atlas = ExtResource("1_7q57e")
@@ -150,14 +149,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 1
+position = Vector2(2.08165e-12, -8)
 script = ExtResource("1_grhk0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_ecmt8")
+position = Vector2(-2.08165e-12, 6.5)
+shape = SubResource("RectangleShape2D_terrg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lw5hx")
-animation = &"walk_down"
-frame = 3
-frame_progress = 0.0612899
+animation = &"idle_down"
