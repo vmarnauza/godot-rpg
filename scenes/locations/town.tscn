@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://buka26gp1e15p"]
+[gd_scene load_steps=5 format=3 uid="uid://buka26gp1e15p"]
 
 [ext_resource type="TileSet" uid="uid://clbjp61jn84kn" path="res://resources/tileset.tres" id="1_0oihb"]
+[ext_resource type="Script" path="res://scenes/locations/location.gd" id="2_owkmi"]
 [ext_resource type="PackedScene" uid="uid://cesx0qscnv1q2" path="res://scenes/player_spawn.tscn" id="2_qo6kk"]
 [ext_resource type="PackedScene" uid="uid://b4tt4qimn3ni4" path="res://scenes/location_change.tscn" id="3_uurw5"]
 
@@ -23,17 +24,20 @@ layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(458759, 262144, 5, 327692, 262144, 5, 11, 720896, 0, 65547, 589824, 1, 12, 655360, 0, 65548, 655360, 1, 9, 720896, 0, 65545, 589824, 1, 10, 786432, 0, 65546, 655360, 1, 7, 720896, 0, 8, 786432, 0, 65543, 589824, 1, 65544, 655360, 1, 14, 589824, 0, 65550, 589824, 1, 15, 786432, 0, 65551, 655360, 1, 16, 720896, 0, 65552, 589824, 1, 17, 786432, 0, 65553, 655360, 1, 18, 720896, 0, 19, 786432, 0, 20, 720896, 0, 21, 786432, 0, 65554, 589824, 1, 65555, 655360, 1, 65556, 589824, 1, 65557, 655360, 1, 131076, 262144, 11, 131077, 327680, 11, 131078, 393216, 11, 4, 262144, 9, 65540, 262144, 10, 5, 327680, 9, 65541, 327680, 10, 6, 393216, 9, 65542, 393216, 10)
+script = ExtResource("2_owkmi")
 
 [node name="DefaultSpawn" parent="." instance=ExtResource("2_qo6kk")]
 position = Vector2(120, 84)
 
 [node name="ToForestLeft" parent="." instance=ExtResource("3_uurw5")]
-position = Vector2(56, 0)
+position = Vector2(56, 4)
+scale = Vector2(1, 0.5)
 target_location = 1
 slide_direction = 3
 
 [node name="ToForestRight" parent="." instance=ExtResource("3_uurw5")]
-position = Vector2(216, 0)
+position = Vector2(216, 4)
+scale = Vector2(1, 0.5)
 target_location = 1
 slide_direction = 3
 spawn_index = 1

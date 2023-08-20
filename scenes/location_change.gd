@@ -7,4 +7,5 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
+		body.call_deferred("queue_free")
 		LocationManager.change(target_location, slide_direction, spawn_index)
