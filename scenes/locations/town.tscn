@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://buka26gp1e15p"]
+[gd_scene load_steps=6 format=3 uid="uid://buka26gp1e15p"]
 
 [ext_resource type="TileSet" uid="uid://clbjp61jn84kn" path="res://resources/tileset.tres" id="1_0oihb"]
 [ext_resource type="Script" path="res://scenes/locations/location.gd" id="2_owkmi"]
 [ext_resource type="PackedScene" uid="uid://cesx0qscnv1q2" path="res://scenes/player_spawn.tscn" id="2_qo6kk"]
 [ext_resource type="PackedScene" uid="uid://b4tt4qimn3ni4" path="res://scenes/location_change.tscn" id="3_uurw5"]
+[ext_resource type="PackedScene" uid="uid://cihcksac7ol50" path="res://scenes/characters/dog.tscn" id="5_mrux4"]
 
 [node name="Town" type="TileMap" groups=["location"]]
 tile_set = ExtResource("1_0oihb")
@@ -57,3 +58,6 @@ index = 2
 [node name="PlayerSpawn2" parent="." instance=ExtResource("2_qo6kk")]
 position = Vector2(216, 16)
 index = 3
+
+[node name="dog" parent="." instance=ExtResource("5_mrux4")]
+position = Vector2(88, 40)

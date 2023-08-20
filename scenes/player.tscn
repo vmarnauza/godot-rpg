@@ -150,7 +150,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-z_index = 1
+z_index = 2
 position = Vector2(2.08165e-12, -8)
 script = ExtResource("1_grhk0")
 
