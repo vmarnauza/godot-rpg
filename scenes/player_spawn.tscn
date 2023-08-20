@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0ti2"]
 size = Vector2(16, 16)
 
-[node name="PlayerSpawn" type="Area2D"]
+[node name="PlayerSpawn" type="Area2D" groups=["player_spawn"]]
 script = ExtResource("1_vfebp")
 player_scene = ExtResource("2_5jxb4")
 
