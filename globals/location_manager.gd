@@ -3,12 +3,8 @@ extends Node
 enum Location { TOWN, FOREST, DUNGEON }
 enum SlideDirection { NONE, LEFT, RIGHT, TOP, BOTTOM }
 
-var current: Location = Location.TOWN
-var previous: Location
-
 
 func _ready():
-	load_location(current)
 	call_deferred("spawn_player", 0)
 
 
@@ -16,8 +12,6 @@ func change(location: Location, slide_direction: SlideDirection, player_spawn_in
 	print("TODO: use slide direction ", slide_direction)
 	exit_current()
 	load_location(location)
-	previous = current
-	current = location
 	call_deferred("spawn_player", player_spawn_index)
 
 
